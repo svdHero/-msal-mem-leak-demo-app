@@ -1,0 +1,6 @@
+{
+    "breadcrumb": "My Devices",
+    "title": "My Devices",
+    "loading": "Loading device data...",
+    "errorLoading": "Error while loading device data"
+}

@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+@import "~@fontsource/mina/index.css";
+@import "~@fontsource/roboto-condensed/index.css";
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+// Define colours:
+$bt-blue: #007bff;
+$bt-indigo: #6610f2;
+$bt-purple: #6f42c1;
+$bt-pink: #e83e8c;
+$bt-red: #dc3545;
+$bt-orange: #fd7e14;
+$bt-yellow: #ffc107;
+$bt-green: #28a745;
+$bt-teal: #20c997;
+$bt-cyan: #17a2b8;
+$bt-white: #fff;
+$bt-black: #000;
+$bt-gray: #6c757d;
+$bt-gray-dark: #343a40;
+$bt-primary: #0451a0;
+$bt-secondary: #2c7dd0;
+
+$bt-success: $bt-green;
+$bt-info: $bt-cyan;
+$bt-warning: $bt-yellow;
+$bt-danger: $bt-red;
+
+$bt-light: #fff;
+$bt-dark: #343a40;
+$bt-gray-100: #fff;
+$bt-gray-200: #f9f9f9;
+$bt-gray-300: #eaeaea;
+$bt-gray-500: #bbb;
+$bt-gray-900: #858585;
+
+// Update Bulma's colours:
+$primary: $bt-primary;
+$secondary: $bt-secondary;
+$body-background-color: $bt-gray-300;
+
+// Update Bulma's global variables
+$family-sans-serif: "Roboto Condensed", sans-serif;
+$title-family: "Mina", sans-serif;
+$subtitle-family: "Mina", sans-serif;
+$button-family: "Mina", sans-serif;
+
+$navbar-item-img-max-height: 50px;
+
+// Custom stuff:
+$spacing-values: ("small": 10px, "medium": 30px, "large": 60px);
+
+// img.crop-128x128 {
+//     width: 128px;
+//     height: 128px;
+//     object-fit: cover;
+// }
+
+th.is-half {
+    width: 50%;
+}
+
+th.is-one-third {
+    width: 33.333%;
+}
+
+th.is-two-thirds {
+    width: 66.666%;
+}
+
+th.is-one-quarter {
+    width: 25%;
+}
+
+th.is-three-quarters {
+    width: 75%;
+}
+
+th.is-one-fifth {
+    width: 20%;
+}
+
+th.is-two-fifths {
+    width: 40%;
+}
+
+th.is-three-fifths {
+    width: 60%;
+}
+th.is-four-fifths {
+    width: 80%;
+}
+
+.mini-title {
+    font-weight: bold;
+}
+
+img.cover {
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 100%;
+    height: 100%
+}
+
+img.property-icon {
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 50px;
+}
+
+pre.is-device-property {
+    padding: 0;
+}
+
+// img.is-128x128 {
+//     width:  128px;
+//     height: 128px;
+// }
+
+// img.is-256x256 {
+//     width:  256px;
+//     height: 256px;
+// }
+
+img.has-rounded-corners {
+    border-radius: 6px;
+}
+
+@import "~bulma/bulma.sass";
+
+// Overwrite stuff:
+
+@media screen and (max-width: 768px) {
+    .media-content {
+      overflow-x: visible;
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "breadcrumb": "User profile",
+    "title": "User information",
+    "profileNotAvailable": "No user profile available",
+    "property": "Property",
+    "value": "Value",
+    "userId": "User id",
+    "givenName": "Given name",
+    "familyName": "Family name",
+    "fullName": "Full name",
+    "email": "Email",
+    "country": "Country",
+    "state": "State",
+    "postalCode": "Postal code",
+    "editProfile": "Edit",
+    "resetPassword": "Reset Password",
+    "idTokenTitle": "Id token information"
+}

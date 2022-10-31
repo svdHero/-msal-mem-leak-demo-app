@@ -1,0 +1,36 @@
+{
+    "navBar": {
+        "navItems": {
+            "myDevices": "My Devices",
+            "searchDevices": "Search",
+            "contact": "Contact",
+            "userMenu": {
+                "loggedInAs": "Logged in as",
+                "profile": "Profile",
+                "signOut": "Sign out"
+            }
+        },
+        "signIn": "Sign in"
+    },
+    "footer": {
+        "legalNotice": "Legal Notice",
+        "privacyPolicy": "Privacy Policy"
+    },
+    "dialog": {
+        "ok": "Ok",
+        "cancel": "Cancel",
+        "apply": "Apply",
+        "save": "Save",
+        "edit": "Edit",
+        "yes": "Yes",
+        "no": "No",
+        "close": "Close",
+        "submit": "Submit"
+    },
+    "authDialog": {
+        "resetPasswordSuccessful": "Password has been reset successfully",
+        "resetPasswordSignInNotice": "Please sign in with your new password.",
+        "editProfileSuccessful": "Profile has been edited successfully.",
+        "editProfileSignInNotice": "Please sign in again."
+    }
+}
