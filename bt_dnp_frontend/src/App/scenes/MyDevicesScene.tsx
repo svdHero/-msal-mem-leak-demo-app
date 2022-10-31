@@ -33,9 +33,9 @@ function MyDevicesBox() {
             })
             .catch(error => {
                 if (!isCanceled) {
-                    console.error(error)
                     setHeavyDataResult(Failure(error))
                 }
+                console.error(error)
             })
         }
         return () => { isCanceled = true }
