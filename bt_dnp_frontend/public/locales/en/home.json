@@ -1,6 +1,6 @@
 {
     "breadcrumb": "Home",
-    "title": "MSAL Meam Leak Demo",
+    "title": "MSAL Mem Leak Demo",
     "welcome": "Welcome to this demo app. Just click on \"Sign in\", then on \"My Devices\" and then quickly on Homer Simpson. Wait 3 seconds and check the console error log.",
     "subtitle": "Let's fix this!"
 }
