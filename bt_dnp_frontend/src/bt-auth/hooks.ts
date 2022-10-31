@@ -17,10 +17,6 @@ export function useAcquireDnpAccessToken(): () => Promise<string>{
     return useAcquireSilentAccessToken(backEndConfig.accessTokenScopes)
 }
 
-// export function useAcquireMsGraphAccessToken(): () => Promise<string>{
-//     return useAcquireSilentAccessToken(msGraphConfig.accessTokenScopes)
-// }
-
 export function useIsAuthInProgress(): boolean {
     return useIsAuthInProgressFromAzure()
 }

@@ -2,41 +2,46 @@ import { Failure, Initial, LazyResult, Loading, Success } from "lemons"
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import AuthenticatedFragment from "../../bt-auth/components/AuthenticatedFragment"
-import { useAcquireDnpAccessToken, useIsAuthInProgress } from "../../bt-auth/hooks"
+import { useIsAuthInProgress } from "../../bt-auth/hooks"
 import LoadingMessage from "../components/LoadingMessage"
 import Message, { MessageLevel } from "../components/Message"
 
+function sleep(millis: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, millis));
+}
+
+
+async function loadHeavyData(): Promise<string> {
+    await sleep(3000)
+    return "Hello world!"
+}
+
 function MyDevicesBox() {
     const { t } = useTranslation()
-    const [accessTokenResult, setAccessTokenResult] = useState<LazyResult<string, string>>(Initial())
+    const [heavyDataResult, setHeavyDataResult] = useState<LazyResult<string, string>>(Initial())
     const isAuthInProgress = useIsAuthInProgress()
-    const acquireDnpAccessToken = useAcquireDnpAccessToken()
-
     // ####################
     useEffect(() => {
         let isCanceled = false
-        if(isAuthInProgress){
-            if(!isCanceled){
-                setAccessTokenResult(Loading())
-            }
-        } else {
-            acquireDnpAccessToken()
+        setHeavyDataResult(Loading())
+        if(!isAuthInProgress){
+            loadHeavyData()
             .then(token => {
                 if (!isCanceled) {
-                    setAccessTokenResult(Success(token))
+                    setHeavyDataResult(Success(token))
                 }
             })
             .catch(error => {
                 if (!isCanceled) {
                     console.error(error)
-                    setAccessTokenResult(Failure(error))
+                    setHeavyDataResult(Failure(error))
                 }
             })
         }
         return () => { isCanceled = true }
-    }, [isAuthInProgress, acquireDnpAccessToken])
+    }, [isAuthInProgress])
     // ####################
-    return accessTokenResult.dispatch(
+    return heavyDataResult.dispatch(
         () => <LoadingMessage message={t("myDevices:loading")} />,
         () => <LoadingMessage message={t("myDevices:loading")} />,
         errorMsg =>
@@ -45,12 +50,12 @@ function MyDevicesBox() {
                 title={t("myDevices:errorLoading")}
                 message={errorMsg}
             />,
-        accessToken =>
+        heavyData =>
             <div className="container">
                 <div className="box">
                     <p className="title">{t("myDevices:title")}</p>
-                    <p className="subtitle">Access Token</p>
-                    <div className="content"><p style={{wordBreak: "break-all"}}>{accessToken}</p></div>
+                    <p className="subtitle">Heavy Data</p>
+                    <div className="content"><p style={{wordBreak: "break-all"}}>{heavyData}</p></div>
                 </div>
             </div>
     )
