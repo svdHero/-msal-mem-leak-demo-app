@@ -26,9 +26,9 @@ function MyDevicesBox() {
         setHeavyDataResult(Loading())
         if(!isAuthInProgress){
             loadHeavyData()
-            .then(token => {
+            .then(heavyData => {
                 if (!isCanceled) {
-                    setHeavyDataResult(Success(token))
+                    setHeavyDataResult(Success(heavyData))
                 }
             })
             .catch(error => {
